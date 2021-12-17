@@ -1,10 +1,10 @@
-11:26:58 **** Incremental Build of configuration Debug for project bq34110_read1 ****
+12:42:14 **** Incremental Build of configuration Debug for project bq34110_read1 ****
 make -j8 all 
 arm-none-eabi-size   bq34110_read1.elf 
    text	   data	    bss	    dec	    hex	filename
-   8568	     24	   1648	  10240	   2800	bq34110_read1.elf
+   8896	     24	   1656	  10576	   2950	bq34110_read1.elf
 Finished building: default.size.stdout
  
 
-11:26:59 Build Finished. 0 errors, 0 warnings. (took 434ms)
+12:42:15 Build Finished. 0 errors, 0 warnings. (took 742ms)
 

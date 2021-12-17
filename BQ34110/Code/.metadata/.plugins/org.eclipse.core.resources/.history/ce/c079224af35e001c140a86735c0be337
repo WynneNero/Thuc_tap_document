@@ -28,20 +28,13 @@
 
 /* Private typedef -----------------------------------------------------------*/
 /* USER CODE BEGIN PTD */
-uint8_t COMMAND_Current				= 0x0C;
-uint8_t	COMMAND_Voltage 			= 0x08;
-uint8_t COMMAND_RemainingCapacity 	= 0x10;
-uint8_t COMMAND_FullChargeCapacity 	= 0x12;
-
+uint8_t voltage_command = 0x08;
 
 /* USER CODE END PTD */
 
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
-#define CURRENT
 #define VOLTAGE
-#define REMAININGCAPACITY
-#define FULLCHARGECAPACITY
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
@@ -66,14 +59,9 @@ static void MX_I2C1_Init(void);
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
-uint8_t command = 0;
+
 uint8_t rcv_data[2] = {0};
-
-int16_t	 value_Current				= 0;
-uint16_t value_Voltage	 			= 0;
-uint16_t value_RemainingCapacity 	= 0;
-uint16_t value_FullChargeCapacity 	= 0;
-
+uint16_t value = 0;
 /* USER CODE END 0 */
 
 /**
@@ -111,33 +99,14 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
-
-
-
   while (1)
   {
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
-
+	 HAL_GPIO_TogglePin(LD4_GPIO_Port, LD4_Pin);
 #ifdef VOLTAGE
-	 HAL_GPIO_TogglePin(LD4_GPIO_Port, LD4_Pin);
-	 if( HAL_I2C_Master_Transmit(&hi2c1, BQ34110, (uint8_t*)&COMMAND_Voltage, 1, HAL_MAX_DELAY) != HAL_OK)
-	 {
-		 Error_Handler();
-	 }
-
-	 if(  HAL_I2C_Master_Receive(&hi2c1, BQ34110, (uint8_t*)rcv_data, 2, HAL_MAX_DELAY) != HAL_OK)
-	 {
-		 Error_Handler();
-	 }
-	 value_Voltage = rcv_data[0] + (rcv_data[1]<<8);
-	 HAL_Delay(500);
-#endif
-
-#ifdef REMAININGCAPACITY
-	 HAL_GPIO_TogglePin(LD4_GPIO_Port, LD4_Pin);
-	 if( HAL_I2C_Master_Transmit(&hi2c1, BQ34110, (uint8_t*)&COMMAND_RemainingCapacity, 1, HAL_MAX_DELAY) != HAL_OK)
+	 if( HAL_I2C_Master_Transmit(&hi2c1, BQ34110, (uint8_t*)&voltage_command, 1, HAL_MAX_DELAY) != HAL_OK)
 	 {
 		 Error_Handler();
 	 }
@@ -147,42 +116,12 @@ int main(void)
 		 Error_Handler();
 	 }
 
-	 value_RemainingCapacity = rcv_data[0] + (rcv_data[1]<<8);
-	 HAL_Delay(500);
+	 value = rcv_data[0] + (rcv_data[1]<<8);
+
 #endif
 
-#ifdef CURRENT
-	 HAL_GPIO_TogglePin(LD4_GPIO_Port, LD4_Pin);
-	 if( HAL_I2C_Master_Transmit(&hi2c1, BQ34110, (uint8_t*)&COMMAND_Current, 1, HAL_MAX_DELAY) != HAL_OK)
-	 {
-		 Error_Handler();
-	 }
 
-	 if(  HAL_I2C_Master_Receive(&hi2c1, BQ34110, (uint8_t*)rcv_data, 2, HAL_MAX_DELAY) != HAL_OK)
-	 {
-		 Error_Handler();
-	 }
-
-	 value_Current = rcv_data[0] + (rcv_data[1]<<8);
 	 HAL_Delay(500);
-#endif
-
-#ifdef FULLCHARGECAPACITY
-	 HAL_GPIO_TogglePin(LD4_GPIO_Port, LD4_Pin);
-	 if( HAL_I2C_Master_Transmit(&hi2c1, BQ34110, (uint8_t*)&COMMAND_FullChargeCapacity, 1, HAL_MAX_DELAY) != HAL_OK)
-	 {
-		 Error_Handler();
-	 }
-
-	 if(  HAL_I2C_Master_Receive(&hi2c1, BQ34110, (uint8_t*)rcv_data, 2, HAL_MAX_DELAY) != HAL_OK)
-	 {
-		 Error_Handler();
-	 }
-
-	 value_FullChargeCapacity = rcv_data[0] + (rcv_data[1]<<8);
-	 HAL_Delay(500);
-#endif
-
 
   }
   /* USER CODE END 3 */
