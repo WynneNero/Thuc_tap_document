@@ -318,6 +318,7 @@ int main(void)
  800028a:	b29a      	uxth	r2, r3
  800028c:	4b07      	ldr	r3, [pc, #28]	; (80002ac <main+0x8c>)
  800028e:	801a      	strh	r2, [r3, #0]
+
 #endif
 
 

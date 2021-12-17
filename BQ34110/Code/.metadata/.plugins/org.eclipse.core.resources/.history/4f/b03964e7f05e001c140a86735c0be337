@@ -117,7 +117,6 @@ int main(void)
 	 }
 
 	 value = rcv_data[0] + (rcv_data[1]<<8);
-
 #endif
 
 
