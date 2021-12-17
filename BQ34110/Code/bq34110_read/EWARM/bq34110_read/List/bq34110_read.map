@@ -1,0 +1,372 @@
+###############################################################################
+#
+# IAR ELF Linker V9.20.2.320/W64 for ARM                  13/Dec/2021  12:49:33
+# Copyright 2007-2021 IAR Systems AB.
+#
+#    Output file  =
+#        C:\Users\acer\OneDrive - Hanoi University of Science and
+#        Technology\NAM_4\TT_document\BQ34110\Code\bq34110_read\EWARM\bq34110_read\Exe\bq34110_read.out
+#    Map file     =
+#        C:\Users\acer\OneDrive - Hanoi University of Science and
+#        Technology\NAM_4\TT_document\BQ34110\Code\bq34110_read\EWARM\bq34110_read\List\bq34110_read.map
+#    Command line =
+#        -f "C:\Users\acer\OneDrive - Hanoi University of Science and
+#        Technology\NAM_4\TT_document\BQ34110\Code\bq34110_read\EWARM\bq34110_read\Exe\bq34110_read.out.rsp"
+#        ("C:\Users\acer\OneDrive - Hanoi University of Science and
+#        Technology\NAM_4\TT_document\BQ34110\Code\bq34110_read\EWARM\bq34110_read\Obj\Application\User\Core\main.o"
+#        "C:\Users\acer\OneDrive - Hanoi University of Science and
+#        Technology\NAM_4\TT_document\BQ34110\Code\bq34110_read\EWARM\bq34110_read\Obj\Application\EWARM\startup_stm32f051x8.o"
+#        "C:\Users\acer\OneDrive - Hanoi University of Science and
+#        Technology\NAM_4\TT_document\BQ34110\Code\bq34110_read\EWARM\bq34110_read\Obj\Drivers\STM32F0xx_HAL_Driver\stm32f0xx_hal.o"
+#        "C:\Users\acer\OneDrive - Hanoi University of Science and
+#        Technology\NAM_4\TT_document\BQ34110\Code\bq34110_read\EWARM\bq34110_read\Obj\Drivers\STM32F0xx_HAL_Driver\stm32f0xx_hal_cortex.o"
+#        "C:\Users\acer\OneDrive - Hanoi University of Science and
+#        Technology\NAM_4\TT_document\BQ34110\Code\bq34110_read\EWARM\bq34110_read\Obj\Drivers\STM32F0xx_HAL_Driver\stm32f0xx_hal_dma.o"
+#        "C:\Users\acer\OneDrive - Hanoi University of Science and
+#        Technology\NAM_4\TT_document\BQ34110\Code\bq34110_read\EWARM\bq34110_read\Obj\Drivers\STM32F0xx_HAL_Driver\stm32f0xx_hal_exti.o"
+#        "C:\Users\acer\OneDrive - Hanoi University of Science and
+#        Technology\NAM_4\TT_document\BQ34110\Code\bq34110_read\EWARM\bq34110_read\Obj\Drivers\STM32F0xx_HAL_Driver\stm32f0xx_hal_flash.o"
+#        "C:\Users\acer\OneDrive - Hanoi University of Science and
+#        Technology\NAM_4\TT_document\BQ34110\Code\bq34110_read\EWARM\bq34110_read\Obj\Drivers\STM32F0xx_HAL_Driver\stm32f0xx_hal_flash_ex.o"
+#        "C:\Users\acer\OneDrive - Hanoi University of Science and
+#        Technology\NAM_4\TT_document\BQ34110\Code\bq34110_read\EWARM\bq34110_read\Obj\Drivers\STM32F0xx_HAL_Driver\stm32f0xx_hal_gpio.o"
+#        "C:\Users\acer\OneDrive - Hanoi University of Science and
+#        Technology\NAM_4\TT_document\BQ34110\Code\bq34110_read\EWARM\bq34110_read\Obj\Drivers\STM32F0xx_HAL_Driver\stm32f0xx_hal_i2c.o"
+#        "C:\Users\acer\OneDrive - Hanoi University of Science and
+#        Technology\NAM_4\TT_document\BQ34110\Code\bq34110_read\EWARM\bq34110_read\Obj\Drivers\STM32F0xx_HAL_Driver\stm32f0xx_hal_i2c_ex.o"
+#        "C:\Users\acer\OneDrive - Hanoi University of Science and
+#        Technology\NAM_4\TT_document\BQ34110\Code\bq34110_read\EWARM\bq34110_read\Obj\Application\User\Core\stm32f0xx_hal_msp.o"
+#        "C:\Users\acer\OneDrive - Hanoi University of Science and
+#        Technology\NAM_4\TT_document\BQ34110\Code\bq34110_read\EWARM\bq34110_read\Obj\Drivers\STM32F0xx_HAL_Driver\stm32f0xx_hal_pwr.o"
+#        "C:\Users\acer\OneDrive - Hanoi University of Science and
+#        Technology\NAM_4\TT_document\BQ34110\Code\bq34110_read\EWARM\bq34110_read\Obj\Drivers\STM32F0xx_HAL_Driver\stm32f0xx_hal_pwr_ex.o"
+#        "C:\Users\acer\OneDrive - Hanoi University of Science and
+#        Technology\NAM_4\TT_document\BQ34110\Code\bq34110_read\EWARM\bq34110_read\Obj\Drivers\STM32F0xx_HAL_Driver\stm32f0xx_hal_rcc.o"
+#        "C:\Users\acer\OneDrive - Hanoi University of Science and
+#        Technology\NAM_4\TT_document\BQ34110\Code\bq34110_read\EWARM\bq34110_read\Obj\Drivers\STM32F0xx_HAL_Driver\stm32f0xx_hal_rcc_ex.o"
+#        "C:\Users\acer\OneDrive - Hanoi University of Science and
+#        Technology\NAM_4\TT_document\BQ34110\Code\bq34110_read\EWARM\bq34110_read\Obj\Drivers\STM32F0xx_HAL_Driver\stm32f0xx_hal_tim.o"
+#        "C:\Users\acer\OneDrive - Hanoi University of Science and
+#        Technology\NAM_4\TT_document\BQ34110\Code\bq34110_read\EWARM\bq34110_read\Obj\Drivers\STM32F0xx_HAL_Driver\stm32f0xx_hal_tim_ex.o"
+#        "C:\Users\acer\OneDrive - Hanoi University of Science and
+#        Technology\NAM_4\TT_document\BQ34110\Code\bq34110_read\EWARM\bq34110_read\Obj\Application\User\Core\stm32f0xx_it.o"
+#        "C:\Users\acer\OneDrive - Hanoi University of Science and
+#        Technology\NAM_4\TT_document\BQ34110\Code\bq34110_read\EWARM\bq34110_read\Obj\Drivers\CMSIS\system_stm32f0xx.o"
+#        --no_out_extension -o "C:\Users\acer\OneDrive - Hanoi University of
+#        Science and
+#        Technology\NAM_4\TT_document\BQ34110\Code\bq34110_read\EWARM\bq34110_read\Exe\bq34110_read.out"
+#        --redirect _Printf=_PrintfFullNoMb --redirect _Scanf=_ScanfFullNoMb
+#        --map "C:\Users\acer\OneDrive - Hanoi University of Science and
+#        Technology\NAM_4\TT_document\BQ34110\Code\bq34110_read\EWARM\bq34110_read\List\bq34110_read.map"
+#        --config "C:\Users\acer\OneDrive - Hanoi University of Science and
+#        Technology\NAM_4\TT_document\BQ34110\Code\bq34110_read\EWARM/stm32f051x8_flash.icf"
+#        --semihosting --entry __iar_program_start --vfe --text_out locale)
+#
+###############################################################################
+
+*******************************************************************************
+*** RUNTIME MODEL ATTRIBUTES
+***
+
+CppFlavor       = *
+__CPP_Runtime   = 1
+__SystemLibrary = DLib
+__dlib_version  = 6
+
+
+*******************************************************************************
+*** HEAP SELECTION
+***
+
+The basic heap was selected because some modules are built with
+size limitations (and not runtime checking), and --advanced_heap
+was not specified.
+
+
+*******************************************************************************
+*** PLACEMENT SUMMARY
+***
+
+"A0":  place at address 0x800'0000 { ro section .intvec };
+"P1":  place in [from 0x800'0000 to 0x800'ffff] { ro };
+define block CSTACK with size = 1K, alignment = 8 { };
+define block HEAP with size = 512, alignment = 8 { };
+"P2":  place in [from 0x2000'0000 to 0x2000'1fff] {
+          rw, block CSTACK, block HEAP };
+initialize by copy { rw };
+
+  Section            Kind         Address   Size  Object
+  -------            ----         -------   ----  ------
+"A0":                                       0xbc
+  .intvec            ro code   0x800'0000   0xbc  startup_stm32f051x8.o [1]
+                             - 0x800'00bc   0xbc
+
+"P1":                                      0xe84
+  .text              ro code   0x800'00bc  0x514  stm32f0xx_hal_rcc.o [4]
+  .text              ro code   0x800'05d0    0xc  stm32f0xx_hal.o [4]
+  .text              ro code   0x800'05dc   0x44  stm32f0xx_hal.o [4]
+  .text              ro code   0x800'0620   0x36  I32DivMod.o [6]
+  .text              ro code   0x800'0656    0x2  startup_stm32f051x8.o [1]
+  .text              ro code   0x800'0658   0x78  stm32f0xx_hal_cortex.o [4]
+  .text              ro code   0x800'06d0    0x2  IntDivZer.o [6]
+  .text              ro code   0x800'06d2    0x2  startup_stm32f051x8.o [1]
+  .text              ro code   0x800'06d4  0x1c8  stm32f0xx_hal_gpio.o [4]
+  .text              ro code   0x800'089c  0x170  main.o [2]
+  .text              ro code   0x800'0a0c   0x20  stm32f0xx_hal.o [4]
+  .text              ro code   0x800'0a2c   0x14  memset.o [6]
+  .text              ro code   0x800'0a40   0xb4  stm32f0xx_hal_i2c.o [4]
+  .text              ro code   0x800'0af4   0x8c  stm32f0xx_hal_i2c_ex.o [4]
+  .text              ro code   0x800'0b80   0x28  stm32f0xx_hal.o [4]
+  .text              ro code   0x800'0ba8  0x10c  stm32f0xx_hal_rcc_ex.o [4]
+  .text              ro code   0x800'0cb4   0x98  stm32f0xx_hal_msp.o [2]
+  .text              ro code   0x800'0d4c   0x4e  ABImemset.o [6]
+  .text              ro code   0x800'0d9a   0x3c  zero_init3.o [6]
+  .text              ro code   0x800'0dd6   0x30  copy_init3.o [6]
+  .text              ro code   0x800'0e06    0x2  startup_stm32f051x8.o [1]
+  .text              ro code   0x800'0e08   0x28  data_init.o [6]
+  .iar.init_table    const     0x800'0e30   0x24  - Linker created -
+  .text              ro code   0x800'0e54   0x1e  cmain.o [6]
+  .text              ro code   0x800'0e72    0x4  low_level_init.o [5]
+  .text              ro code   0x800'0e76    0x8  exit.o [5]
+  .text              ro code   0x800'0e7e    0x2  startup_stm32f051x8.o [1]
+  .text              ro code   0x800'0e80    0xa  cexit.o [6]
+  .text              ro code   0x800'0e8a    0x2  startup_stm32f051x8.o [1]
+  .text              ro code   0x800'0e8c   0x14  exit.o [7]
+  .text              ro code   0x800'0ea0   0x1c  cstartup_M.o [6]
+  .text              ro code   0x800'0ebc   0x14  system_stm32f0xx.o [3]
+  .text              ro code   0x800'0ed0   0x10  startup_stm32f051x8.o [1]
+  .text              ro code   0x800'0ee0   0x10  stm32f0xx_hal.o [4]
+  .text              ro code   0x800'0ef0   0x10  stm32f0xx_it.o [2]
+  Initializer bytes  const     0x800'0f00   0x10  <for P2-1>
+  .text              ro code   0x800'0f10    0x2  startup_stm32f051x8.o [1]
+  .text              ro code   0x800'0f12    0x2  startup_stm32f051x8.o [1]
+  .text              ro code   0x800'0f14    0x2  startup_stm32f051x8.o [1]
+  .text              ro code   0x800'0f16    0x2  startup_stm32f051x8.o [1]
+  .text              ro code   0x800'0f18    0x2  startup_stm32f051x8.o [1]
+  .text              ro code   0x800'0f1a    0x2  startup_stm32f051x8.o [1]
+  .text              ro code   0x800'0f1c    0x2  startup_stm32f051x8.o [1]
+  .text              ro code   0x800'0f1e    0x2  startup_stm32f051x8.o [1]
+  .text              ro code   0x800'0f20    0x2  startup_stm32f051x8.o [1]
+  .text              ro code   0x800'0f22    0x2  startup_stm32f051x8.o [1]
+  .text              ro code   0x800'0f24    0x2  startup_stm32f051x8.o [1]
+  .text              ro code   0x800'0f26    0x2  startup_stm32f051x8.o [1]
+  .text              ro code   0x800'0f28    0x2  startup_stm32f051x8.o [1]
+  .text              ro code   0x800'0f2a    0x2  startup_stm32f051x8.o [1]
+  .text              ro code   0x800'0f2c    0x2  startup_stm32f051x8.o [1]
+  .text              ro code   0x800'0f2e    0x2  startup_stm32f051x8.o [1]
+  .text              ro code   0x800'0f30    0x2  startup_stm32f051x8.o [1]
+  .text              ro code   0x800'0f32    0x2  startup_stm32f051x8.o [1]
+  .text              ro code   0x800'0f34    0x2  startup_stm32f051x8.o [1]
+  .text              ro code   0x800'0f36    0x2  startup_stm32f051x8.o [1]
+  .text              ro code   0x800'0f38    0x2  startup_stm32f051x8.o [1]
+  .text              ro code   0x800'0f3a    0x2  startup_stm32f051x8.o [1]
+  .text              ro code   0x800'0f3c    0x2  startup_stm32f051x8.o [1]
+  .text              ro code   0x800'0f3e    0x2  startup_stm32f051x8.o [1]
+  .rodata            const     0x800'0f40    0x0  zero_init3.o [6]
+  .rodata            const     0x800'0f40    0x0  copy_init3.o [6]
+                             - 0x800'0f40  0xe84
+
+"P2", part 1 of 3:                          0x10
+  P2-1                        0x2000'0000   0x10  <Init block>
+    .data            inited   0x2000'0000    0xc  stm32f0xx_hal.o [4]
+    .data            inited   0x2000'000c    0x4  system_stm32f0xx.o [3]
+                            - 0x2000'0010   0x10
+
+"P2", part 2 of 3:                          0x4c
+  .bss               zero     0x2000'0010   0x4c  main.o [2]
+                            - 0x2000'005c   0x4c
+
+"P2", part 3 of 3:                         0x400
+  CSTACK                      0x2000'0060  0x400  <Block>
+    CSTACK           uninit   0x2000'0060  0x400  <Block tail>
+                            - 0x2000'0460  0x400
+
+Unused ranges:
+
+         From           To    Size
+         ----           --    ----
+   0x800'0f40   0x800'ffff  0xf0c0
+  0x2000'005c  0x2000'005f     0x4
+  0x2000'0460  0x2000'1fff  0x1ba0
+
+
+*******************************************************************************
+*** INIT TABLE
+***
+
+          Address      Size
+          -------      ----
+Zero (__iar_zero_init3)
+    1 destination range, total size 0x4c:
+          0x2000'0010  0x4c
+
+Copy (__iar_copy_init3)
+    1 source range, total size 0x10:
+           0x800'0f00  0x10
+    1 destination range, total size 0x10:
+          0x2000'0000  0x10
+
+
+
+*******************************************************************************
+*** MODULE SUMMARY
+***
+
+    Module                  ro code  ro data  rw data
+    ------                  -------  -------  -------
+command line/config:
+    -------------------------------------------------
+    Total:
+
+C:\Users\acer\OneDrive - Hanoi University of Science and Technology\NAM_4\TT_document\BQ34110\Code\bq34110_read\EWARM\bq34110_read\Obj\Application\EWARM: [1]
+    startup_stm32f051x8.o       262
+    -------------------------------------------------
+    Total:                      262
+
+C:\Users\acer\OneDrive - Hanoi University of Science and Technology\NAM_4\TT_document\BQ34110\Code\bq34110_read\EWARM\bq34110_read\Obj\Application\User\Core: [2]
+    main.o                      368                76
+    stm32f0xx_hal_msp.o         152
+    stm32f0xx_it.o               16
+    -------------------------------------------------
+    Total:                      536                76
+
+C:\Users\acer\OneDrive - Hanoi University of Science and Technology\NAM_4\TT_document\BQ34110\Code\bq34110_read\EWARM\bq34110_read\Obj\Drivers\CMSIS: [3]
+    system_stm32f0xx.o           20        4        4
+    -------------------------------------------------
+    Total:                       20        4        4
+
+C:\Users\acer\OneDrive - Hanoi University of Science and Technology\NAM_4\TT_document\BQ34110\Code\bq34110_read\EWARM\bq34110_read\Obj\Drivers\STM32F0xx_HAL_Driver: [4]
+    stm32f0xx_hal.o             168       12       12
+    stm32f0xx_hal_cortex.o      120
+    stm32f0xx_hal_gpio.o        456
+    stm32f0xx_hal_i2c.o         180
+    stm32f0xx_hal_i2c_ex.o      140
+    stm32f0xx_hal_rcc.o       1'300
+    stm32f0xx_hal_rcc_ex.o      268
+    -------------------------------------------------
+    Total:                    2'632       12       12
+
+dl6M_tln.a: [5]
+    exit.o                        8
+    low_level_init.o              4
+    -------------------------------------------------
+    Total:                       12
+
+rt6M_tl.a: [6]
+    ABImemset.o                  78
+    I32DivMod.o                  54
+    IntDivZer.o                   2
+    cexit.o                      10
+    cmain.o                      30
+    copy_init3.o                 48
+    cstartup_M.o                 28
+    data_init.o                  40
+    memset.o                     20
+    zero_init3.o                 60
+    -------------------------------------------------
+    Total:                      370
+
+shb_l.a: [7]
+    exit.o                       20
+    -------------------------------------------------
+    Total:                       20
+
+    Linker created                        36    1'024
+-----------------------------------------------------
+    Grand Total:              3'852       52    1'116
+
+
+*******************************************************************************
+*** ENTRY LIST
+***
+
+Entry                       Address   Size  Type      Object
+-----                       -------   ----  ----      ------
+.iar.init_table$$Base    0x800'0e30          --   Gb  - Linker created -
+.iar.init_table$$Limit   0x800'0e54          --   Gb  - Linker created -
+?main                    0x800'0e55         Code  Gb  cmain.o [6]
+AHBPrescTable            0x800'0ec0   0x10  Data  Gb  system_stm32f0xx.o [3]
+CSTACK$$Base            0x2000'0060          --   Gb  - Linker created -
+CSTACK$$Limit           0x2000'0460          --   Gb  - Linker created -
+Error_Handler            0x800'0a09    0x4  Code  Gb  main.o [2]
+HAL_Delay                0x800'0b81   0x28  Code  Wk  stm32f0xx_hal.o [4]
+HAL_GPIO_Init            0x800'06d5  0x194  Code  Gb  stm32f0xx_hal_gpio.o [4]
+HAL_GPIO_TogglePin       0x800'0875   0x10  Code  Gb  stm32f0xx_hal_gpio.o [4]
+HAL_GPIO_WritePin        0x800'0869    0xc  Code  Gb  stm32f0xx_hal_gpio.o [4]
+HAL_GetTick              0x800'05d1    0xc  Code  Wk  stm32f0xx_hal.o [4]
+HAL_I2CEx_ConfigAnalogFilter
+                         0x800'0af5   0x3a  Code  Gb  stm32f0xx_hal_i2c_ex.o [4]
+HAL_I2CEx_ConfigDigitalFilter
+                         0x800'0b2f   0x36  Code  Gb  stm32f0xx_hal_i2c_ex.o [4]
+HAL_I2C_Init             0x800'0a41   0xa8  Code  Gb  stm32f0xx_hal_i2c.o [4]
+HAL_I2C_MspInit          0x800'0cdf   0x5e  Code  Gb  stm32f0xx_hal_msp.o [2]
+HAL_IncTick              0x800'0ee1   0x10  Code  Wk  stm32f0xx_hal.o [4]
+HAL_Init                 0x800'0a0d   0x1a  Code  Gb  stm32f0xx_hal.o [4]
+HAL_InitTick             0x800'05dd   0x44  Code  Wk  stm32f0xx_hal.o [4]
+HAL_MspInit              0x800'0cb5   0x2a  Code  Gb  stm32f0xx_hal_msp.o [2]
+HAL_NVIC_SetPriority     0x800'0693    0x8  Code  Gb  stm32f0xx_hal_cortex.o [4]
+HAL_RCCEx_PeriphCLKConfig
+                         0x800'0ba9   0xf4  Code  Gb  stm32f0xx_hal_rcc_ex.o [4]
+HAL_RCC_ClockConfig      0x800'0449   0xfc  Code  Gb  stm32f0xx_hal_rcc.o [4]
+HAL_RCC_GetSysClockFreq
+                         0x800'054d   0x3a  Code  Gb  stm32f0xx_hal_rcc.o [4]
+HAL_RCC_GetSysClockFreq::aPLLMULFactorTable
+                         0x800'05b0   0x10  Data  Lc  stm32f0xx_hal_rcc.o [4]
+HAL_RCC_GetSysClockFreq::aPredivFactorTable
+                         0x800'05c0   0x10  Data  Lc  stm32f0xx_hal_rcc.o [4]
+HAL_RCC_OscConfig        0x800'00bd  0x37e  Code  Gb  stm32f0xx_hal_rcc.o [4]
+HAL_SYSTICK_Config       0x800'069b   0x28  Code  Gb  stm32f0xx_hal_cortex.o [4]
+HardFault_Handler        0x800'0ef3    0x2  Code  Gb  stm32f0xx_it.o [2]
+NMI_Handler              0x800'0ef1    0x2  Code  Gb  stm32f0xx_it.o [2]
+PendSV_Handler           0x800'0ef7    0x2  Code  Gb  stm32f0xx_it.o [2]
+Region$$Table$$Base      0x800'0e30          --   Gb  - Linker created -
+Region$$Table$$Limit     0x800'0e54          --   Gb  - Linker created -
+SVC_Handler              0x800'0ef5    0x2  Code  Gb  stm32f0xx_it.o [2]
+SysTick_Handler          0x800'0ef9    0x8  Code  Gb  stm32f0xx_it.o [2]
+SystemClock_Config       0x800'098d   0x7c  Code  Gb  main.o [2]
+SystemCoreClock         0x2000'000c    0x4  Data  Gb  system_stm32f0xx.o [3]
+SystemInit               0x800'0ebd    0x2  Code  Gb  system_stm32f0xx.o [3]
+__ICFEDIT_region_RAM_end__ {Abs}
+                        0x2000'1fff         Data  Gb  <internal module>
+__ICFEDIT_region_RAM_start__ {Abs}
+                        0x2000'0000         Data  Gb  <internal module>
+__NVIC_SetPriority       0x800'0659   0x3a  Code  Lc  stm32f0xx_hal_cortex.o [4]
+__aeabi_idiv0            0x800'06d1         Code  Gb  IntDivZer.o [6]
+__aeabi_memset           0x800'0d4d         Code  Gb  ABImemset.o [6]
+__cmain                  0x800'0e55         Code  Gb  cmain.o [6]
+__exit                   0x800'0e8d   0x14  Code  Gb  exit.o [7]
+__iar_Memset4_word       0x800'0d6d         Code  Gb  ABImemset.o [6]
+__iar_Memset_word        0x800'0d59         Code  Gb  ABImemset.o [6]
+__iar_copy_init3         0x800'0dd7   0x30  Code  Gb  copy_init3.o [6]
+__iar_data_init3         0x800'0e09   0x28  Code  Gb  data_init.o [6]
+__iar_program_start      0x800'0ea1         Code  Gb  cstartup_M.o [6]
+__iar_small_uidiv        0x800'0621         Code  Gb  I32DivMod.o [6]
+__iar_small_uidivmod     0x800'0621         Code  Gb  I32DivMod.o [6]
+__iar_zero_init3         0x800'0d9b   0x3c  Code  Gb  zero_init3.o [6]
+__low_level_init         0x800'0e73    0x4  Code  Gb  low_level_init.o [5]
+__vector_table           0x800'0000         Data  Gb  startup_stm32f051x8.o [1]
+_call_main               0x800'0e61         Code  Gb  cmain.o [6]
+_exit                    0x800'0e81         Code  Gb  cexit.o [6]
+exit                     0x800'0e77    0x8  Code  Gb  exit.o [5]
+hi2c1                   0x2000'0010   0x4c  Data  Gb  main.o [2]
+main                     0x800'089d   0xdc  Code  Gb  main.o [2]
+memset                   0x800'0a2d   0x14  Code  Gb  memset.o [6]
+uwTick                  0x2000'0004    0x4  Data  Gb  stm32f0xx_hal.o [4]
+uwTickFreq              0x2000'0000    0x1  Data  Gb  stm32f0xx_hal.o [4]
+uwTickPrio              0x2000'0008    0x4  Data  Gb  stm32f0xx_hal.o [4]
+
+
+[1] = C:\Users\acer\OneDrive - Hanoi University of Science and Technology\NAM_4\TT_document\BQ34110\Code\bq34110_read\EWARM\bq34110_read\Obj\Application\EWARM
+[2] = C:\Users\acer\OneDrive - Hanoi University of Science and Technology\NAM_4\TT_document\BQ34110\Code\bq34110_read\EWARM\bq34110_read\Obj\Application\User\Core
+[3] = C:\Users\acer\OneDrive - Hanoi University of Science and Technology\NAM_4\TT_document\BQ34110\Code\bq34110_read\EWARM\bq34110_read\Obj\Drivers\CMSIS
+[4] = C:\Users\acer\OneDrive - Hanoi University of Science and Technology\NAM_4\TT_document\BQ34110\Code\bq34110_read\EWARM\bq34110_read\Obj\Drivers\STM32F0xx_HAL_Driver
+[5] = dl6M_tln.a
+[6] = rt6M_tl.a
+[7] = shb_l.a
+
+  3'852 bytes of readonly  code memory
+     52 bytes of readonly  data memory
+  1'116 bytes of readwrite data memory
+
+Errors: none
+Warnings: none

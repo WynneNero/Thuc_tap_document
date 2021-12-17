@@ -1,0 +1,10 @@
+12:17:10 **** Incremental Build of configuration Debug for project bq34110_stm32f103 ****
+make -j8 all 
+arm-none-eabi-size   bq34110_stm32f103.elf 
+   text	   data	    bss	    dec	    hex	filename
+   7192	     24	   1656	   8872	   22a8	bq34110_stm32f103.elf
+Finished building: default.size.stdout
+ 
+
+12:17:11 Build Finished. 0 errors, 0 warnings. (took 763ms)
+
