@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;bq34110_write_flash&apos; to &apos;bq34110_RW_flash&apos;" description="Rename resource &apos;bq34110_write_flash&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="/bq34110_write_flash" name="bq34110_RW_flash" stamp="1639996141152" updateReferences="true"/>
+</session>

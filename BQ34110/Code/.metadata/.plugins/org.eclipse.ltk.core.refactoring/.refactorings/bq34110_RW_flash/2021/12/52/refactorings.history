@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;bq34110_RW_flash/bq34110_read1.ioc&apos; to &apos;bq34110_RW_flash.ioc&apos;" description="Rename resource &apos;bq34110_read1.ioc&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="bq34110_read1.ioc" name="bq34110_RW_flash.ioc" stamp="1639996225572" updateReferences="true"/>
+</session>
