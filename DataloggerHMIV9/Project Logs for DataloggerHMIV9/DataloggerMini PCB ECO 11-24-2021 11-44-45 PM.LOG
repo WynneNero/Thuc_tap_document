@@ -1,0 +1,25 @@
+Added Component: Designator=C24(CN2)
+Add component (AddParameter): Name = "Value"; Value = "VR 10K"; VariantName = "[No Variations]"
+Added Component: Designator=C37(CN2)
+Add component (AddParameter): Name = "Value"; Value = "VR 10K"; VariantName = "[No Variations]"
+Added Component: Designator=U1(203042TSMRPLF)
+Add component (AddParameter): Name = "Arrow Part Number"; Value = "2030-42T-SM-RPLF"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Arrow Price/Stock"; Value = "https://www.arrow.com/en/products/2030-42t-sm-rplf/bourns"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Datasheet Link"; Value = "https://www.mouser.com/datasheet/2/54/030-xxt-sm-776307.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Height"; Value = "5.3mm"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer_Name"; Value = "Bourns"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer_Part_Number"; Value = "2030-42T-SM-RPLF"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Mouser Part Number"; Value = "652-2030-42T-SM-RPLF"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Mouser Price/Stock"; Value = "https://www.mouser.co.uk/ProductDetail/Bourns/2030-42T-SM-RPLF?qs=5MvhVKkHFQUQcmaLkL8YYA%3D%3D"; VariantName = "[No Variations]"
+Added Pin To Net: NetName=WSP+ Pin=C24-2
+Added Pin To Net: NetName=In6+ Pin=C37-2
+Added Pin To Net: NetName=Earth Pin=U1-2
+Added Pin To Net: NetName=NetC24_1 Pin=C24-1
+Added Pin To Net: NetName=NetC24_1 Pin=U1-1
+Added Net: Name=NetC24_1
+Added Pin To Net: NetName=NetC37_1 Pin=C37-1
+Added Pin To Net: NetName=NetC37_1 Pin=U1-3
+Added Net: Name=NetC37_1
+Added Member To Class: ClassName=U_Jack Member=Component C24 VARISTOR
+Added Member To Class: ClassName=U_Jack Member=Component C37 VARISTOR
+Added Member To Class: ClassName=U_Jack Member=Component U1 2030-42T-SM-RPLF

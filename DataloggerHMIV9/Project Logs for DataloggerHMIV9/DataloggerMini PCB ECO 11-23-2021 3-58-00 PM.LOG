@@ -1,0 +1,9 @@
+Added Component: Designator=TBU1(TBU-DF085-300-WH)
+Added Pin To Net: NetName=485A Pin=TBU1-1
+Added Pin To Net: NetName=NetJP1_3 Pin=TBU1-3
+Added Pin To Net: NetName=NetJP3_1 Pin=TBU1-4
+Added Pin To Net: NetName=NetJP3_1 Pin=TBU1-4
+Added Pin To Net: NetName=485B Pin=TBU1-6
+Added Member To Class: ClassName=U_Jack Member=Component P1 Header 22
+Added Member To Class: ClassName=U_Jack Member=Component P2 Header 22
+Added Member To Class: ClassName=U_Jack Member=Component TBU1 TBU-DF085-300-WH

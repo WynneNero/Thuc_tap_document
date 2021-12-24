@@ -1,0 +1,13 @@
+Output: NC Drill Files
+Type  : NC Drill
+From  : Project [DataloggerHMIV9.PrjPcb]
+   Generated File[DataloggerMini-RoundHoles.TXT]
+   Generated File[DataloggerMini-SlotHoles.TXT]
+   Generated File[DataloggerMini.LDP]
+   Generated File[DataloggerMini.DRR]
+
+
+Files Generated   : 4
+Documents Printed : 0
+
+Finished Output Generation At 3:08:08 PM On 11/25/2021

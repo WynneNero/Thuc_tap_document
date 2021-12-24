@@ -1,0 +1,6 @@
+Removed Pin From Net: NetName=12V Pin=P1-10
+Removed Pin From Net: NetName=SDIdata Pin=P1-11
+Removed Pin From Net: NetName=GND Pin=P1-12
+Added Pin To Net: NetName=GND Pin=P1-10
+Added Pin To Net: NetName=12V Pin=P1-11
+Added Pin To Net: NetName=SDIdata Pin=P1-12

@@ -1,0 +1,18 @@
+Removed Pin From Net: NetName=DOUT1 Pin=P2-10
+Removed Pin From Net: NetName=DOUT2 Pin=P2-13
+Added Component: Designator=F3(Fuse1A)
+Add component (AddParameter): Name = "Designed by"; Value = "VanDungEvn"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "Fuse"; VariantName = "[No Variations]"
+Added Component: Designator=F4(Fuse1A)
+Add component (AddParameter): Name = "Designed by"; Value = "VanDungEvn"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "Fuse"; VariantName = "[No Variations]"
+Added Pin To Net: NetName=DOUT1 Pin=F3-2
+Added Pin To Net: NetName=DOUT2 Pin=F4-2
+Added Pin To Net: NetName=NetF3_1 Pin=F3-1
+Added Pin To Net: NetName=NetF3_1 Pin=P2-10
+Added Net: Name=NetF3_1
+Added Pin To Net: NetName=NetF4_1 Pin=F4-1
+Added Pin To Net: NetName=NetF4_1 Pin=P2-13
+Added Net: Name=NetF4_1
+Added Member To Class: ClassName=U_Jack Member=Component F3 F100
+Added Member To Class: ClassName=U_Jack Member=Component F4 F100

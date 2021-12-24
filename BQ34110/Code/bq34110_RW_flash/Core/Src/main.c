@@ -60,13 +60,16 @@ typedef enum
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
 
+
 //#define CURRENT
 //#define VOLTAGE
-#define REMAINING_CAPACITY
-#define FULL_CHARGE_CAPACITY
-#define DESIGN_CAPACITY
+//#define REMAINING_CAPACITY
+//#define FULL_CHARGE_CAPACITY
+//#define DESIGN_CAPACITY
 
 #define MANUFACTURER_ACCESS_CONTROL
+//#define WRITE_DATA_FLASH
+#define READ_DATA_FLASH
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
@@ -88,6 +91,8 @@ static void MX_I2C1_Init(void);
 /* USER CODE BEGIN PFP */
 void Read_BQ34110(I2C_HandleTypeDef *hi2c, Command_typedef command, uint8_t *rcv_data, uint16_t size);
 void Transmit_SubCommand(I2C_HandleTypeDef *hi2c,Command_typedef command , Sub_typedef subCommand);
+void Write_Data(I2C_HandleTypeDef *hi2c,Command_typedef command , uint8_t* data, uint8_t size);
+
 
 /* USER CODE END PFP */
 
@@ -95,6 +100,8 @@ void Transmit_SubCommand(I2C_HandleTypeDef *hi2c,Command_typedef command , Sub_t
 /* USER CODE BEGIN 0 */
 uint8_t command = 0;
 uint8_t rcv_data[32] = {0};
+uint8_t trans_data[32] = {0};
+uint8_t checkSum = 0;
 
 int16_t	 value_Current						= 0;
 uint16_t value_Voltage	 					= 0;
@@ -153,23 +160,64 @@ int main(void)
 
 #ifdef VOLTAGE
 	 HAL_GPIO_TogglePin(LD4_GPIO_Port, LD4_Pin);
-	 Read_BQ34110(&hi2c1, &COMMAND_Voltage, rcv_data, 2);
+	 Read_BQ34110(&hi2c1, COMMAND_Voltage, rcv_data, 2);
 	 value_Voltage = rcv_data[0] + (rcv_data[1]<<8);
 	 HAL_Delay(500);
 #endif
 
-#ifdef MANUFACTURER_ACCESS_CONTROL
+#ifdef DESIGN_CAPACITY
+	 HAL_GPIO_TogglePin(LD4_GPIO_Port, LD4_Pin);
+	 Read_BQ34110(&hi2c1, COMMAND_DesignCapacity, rcv_data, 2);
+	 value_DesignCapacity = rcv_data[0] + (rcv_data[1]<<8);
+	 HAL_Delay(500);
+#endif
+
+#ifdef REMAINING_CAPACITY
+	 HAL_GPIO_TogglePin(LD4_GPIO_Port, LD4_Pin);
+	 Read_BQ34110(&hi2c1, COMMAND_RemainingCapacity, rcv_data, 2);
+	 value_RemainingCapacity = rcv_data[0] + (rcv_data[1]<<8);
+	 HAL_Delay(500);
+#endif
+
+#ifdef FULL_CHARGE_CAPACITY
+	 HAL_GPIO_TogglePin(LD4_GPIO_Port, LD4_Pin);
+	 Read_BQ34110(&hi2c1, COMMAND_FullChargeCapacity, rcv_data, 2);
+	 value_FullChargeCapacity = rcv_data[0] + (rcv_data[1]<<8);
+	 HAL_Delay(500);
+#endif
+
+
+
+
+#ifdef WRITE_DATA_FLASH
+	 HAL_GPIO_TogglePin(LD4_GPIO_Port, LD4_Pin);
+	 	 //write subCommand
+	 Transmit_SubCommand(&hi2c1, COMMAND_ManufacturerAccessControl, SUB_Addr_DesignCapacity);
+	 	 //write data
+	 trans_data[0] = 0x0B;
+	 trans_data[1] = 0xB8;
+	 Write_Data(&hi2c1, COMMAND_MACData, trans_data, 2);
+	 	 //write checkSum
+	 checkSum = (0xFF - (0x41 + 0xF5 + 0x0B + 0xB8)) & 0xFF;
+	 trans_data[0] = checkSum;
+	 Write_Data(&hi2c1, COMMAND_MACDataSum, trans_data, 1);
+	 	 //write Length
+	 trans_data[0] = 0x06;  //= (4 + length of MACData() bytes)
+	 Write_Data(&hi2c1, COMMAND_MACDataLen, trans_data, 1);
+
+	 HAL_Delay(500);
+#endif
+
+#ifdef READ_DATA_FLASH
 	 HAL_GPIO_TogglePin(LD4_GPIO_Port, LD4_Pin);
 
 	 Transmit_SubCommand(&hi2c1, COMMAND_ManufacturerAccessControl, SUB_Addr_DesignCapacity);
-
 	 Read_BQ34110(&hi2c1, COMMAND_ManufacturerAccessControl, rcv_data, 2);
-	 Read_BQ34110(&hi2c1, COMMAND_MACData, rcv_data, 32);
+	 Read_BQ34110(&hi2c1, COMMAND_MACData, rcv_data, 2);
 	 Read_BQ34110(&hi2c1, COMMAND_MACDataSum, rcv_data, 1);
 	 Read_BQ34110(&hi2c1, COMMAND_MACDataLen, rcv_data, 1);
 
 	 HAL_Delay(500);
-
 #endif
 
   }
@@ -315,14 +363,30 @@ void Transmit_SubCommand(I2C_HandleTypeDef *hi2c,Command_typedef command , Sub_t
 {
 	uint8_t trans_data[3] = {0};
 	trans_data[0] = command;
-	trans_data[1] = subCommand & 0x00FF;
-	trans_data[2] = subCommand >> 8;
+	trans_data[1] = subCommand & 0x00FF;			//LSB
+	trans_data[2] = subCommand >> 8;				//MSB
 	 if( HAL_I2C_Master_Transmit(hi2c, BQ34110, (uint8_t*)trans_data, 3, HAL_MAX_DELAY) != HAL_OK)
 	 {
 		 Error_Handler();
 	 }
-
 }
+
+void Write_Data(I2C_HandleTypeDef *hi2c,Command_typedef command , uint8_t* data, uint8_t size)
+{
+	uint8_t trans_data[33] = {0};
+	trans_data[0] = command;
+	for(int i = 1; i <= size; i++)
+	{
+		trans_data[i] = data[i - 1];
+	}
+
+	 if( HAL_I2C_Master_Transmit(hi2c, BQ34110, (uint8_t*)trans_data, (uint16_t)(size + 1), HAL_MAX_DELAY) != HAL_OK)
+	 {
+		 Error_Handler();
+	 }
+}
+
+
 /* USER CODE END 4 */
 
 /**

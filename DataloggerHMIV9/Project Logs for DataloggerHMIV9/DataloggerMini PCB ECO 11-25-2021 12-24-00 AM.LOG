@@ -1,0 +1,12 @@
+Removed Pin From Net: NetName=485A-TX2 Pin=P1-11
+Removed Pin From Net: NetName=485B-RX2 Pin=P1-12
+Removed Pin From Net: NetName=DO1 Pin=P1-14
+Removed Pin From Net: NetName=RI1 Pin=P1-15
+Removed Pin From Net: NetName=DO4 Pin=P1-17
+Removed Pin From Net: NetName=RI4 Pin=P1-18
+Added Pin To Net: NetName=DO4 Pin=P1-11
+Added Pin To Net: NetName=RI4 Pin=P1-12
+Added Pin To Net: NetName=485A-TX2 Pin=P1-14
+Added Pin To Net: NetName=485B-RX2 Pin=P1-15
+Added Pin To Net: NetName=DO1 Pin=P1-17
+Added Pin To Net: NetName=RI1 Pin=P1-18

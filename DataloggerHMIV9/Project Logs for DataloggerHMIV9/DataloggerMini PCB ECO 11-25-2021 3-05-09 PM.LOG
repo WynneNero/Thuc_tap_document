@@ -1,0 +1,11 @@
+Removed Pin From Net: NetName=PB_MCU Pin=Q2-1
+Added Component: Designator=R67(RES-SMD-0805)
+Add component (AddParameter): Name = "Class"; Value = "Passive"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = "Generic Components"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Published"; Value = "08/06/2000"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Publisher"; Value = "Altium Hobart Technology Centre"; VariantName = "[No Variations]"
+Added Pin To Net: NetName=PB_MCU Pin=R67-2
+Added Pin To Net: NetName=NetQ2_1 Pin=Q2-1
+Added Pin To Net: NetName=NetQ2_1 Pin=R67-1
+Added Net: Name=NetQ2_1
+Added Member To Class: ClassName=U_GLCD Member=Component R67 2K

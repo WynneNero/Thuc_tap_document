@@ -1,0 +1,10 @@
+Added Component: Designator=FL?(LCF080602A900TG)
+Add component (AddParameter): Name = "Arrow Part Number"; Value = "LCF080602A900TG"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Arrow Price/Stock"; Value = "https://www.arrow.com/en/products/lcf080602a900tg/littelfuse"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Datasheet Link"; Value = "https://datasheet.datasheetarchive.com/originals/distributors/DKDS41/DSANUWW0025970.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Height"; Value = "0.55mm"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer_Name"; Value = "LITTELFUSE"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer_Part_Number"; Value = "LCF080602A900TG"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Mouser Part Number"; Value = "576-LCF080602A900TG"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Mouser Price/Stock"; Value = "https://www.mouser.co.uk/ProductDetail/Littelfuse/LCF080602A900TG?qs=EU6FO9ffTwcAJcllMkLUnQ%3D%3D"; VariantName = "[No Variations]"
+Added Member To Class: ClassName=U_Jack Member=Component FL? LCF080602A900TG

@@ -1,0 +1,12 @@
+Added Component: Designator=D23(DIONM5127X229N)
+Add component (AddParameter): Name = "Arrow Part Number"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Arrow Price/Stock"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Datasheet Link"; Value = "https://www.bourns.com/docs/product-datasheets/sma6j-q.pdf?sfvrsn=4a9a7af6_53"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Height"; Value = "2.29mm"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer_Name"; Value = "Bourns"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer_Part_Number"; Value = "SMA6J10CA-Q"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Mouser Part Number"; Value = "652-SMA6J10CA-Q"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Mouser Price/Stock"; Value = "https://www.mouser.co.uk/ProductDetail/Bourns/SMA6J10CA-Q?qs=BJlw7L4Cy79QGk2EpmeXhg%3D%3D"; VariantName = "[No Variations]"
+Added Pin To Net: NetName=GND Pin=D23-1
+Added Pin To Net: NetName=SDIdata Pin=D23-2
+Added Member To Class: ClassName=U_Jack Member=Component D23 SMA6J10CA-Q
