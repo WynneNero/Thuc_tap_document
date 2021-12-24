@@ -1,4 +1,4 @@
-Record=TopLevelDocument|FileName=Master.SchDoc
-Record=SheetSymbol|SourceDocument=Master.SchDoc|Designator=U_Charger|SchDesignator=U_Charger|FileName=Charger.SchDoc|SymbolType=Normal|RawFileName=Charger.SchDoc|DesignItemId= |SourceLibraryName= |ObjectKind=Sheet Symbol|RevisionGUID= |ItemGUID= |VaultGUID= 
-Record=SheetSymbol|SourceDocument=Master.SchDoc|Designator=U_GLCD|SchDesignator=U_GLCD|FileName=GLCD.SchDoc|SymbolType=Normal|RawFileName=GLCD.SchDoc|DesignItemId= |SourceLibraryName= |ObjectKind=Sheet Symbol|RevisionGUID= |ItemGUID= |VaultGUID= 
-Record=SheetSymbol|SourceDocument=Master.SchDoc|Designator=U_Jack|SchDesignator=U_Jack|FileName=Jack.SchDoc|SymbolType=Normal|RawFileName=Jack.SchDoc|DesignItemId= |SourceLibraryName= |ObjectKind=Sheet Symbol|RevisionGUID= |ItemGUID= |VaultGUID= 
+Record=TopLevelDocument|FileName=Master.SchDoc|SheetNumber=1
+Record=SheetSymbol|SourceDocument=Master.SchDoc|Designator=U_Charger|SchDesignator=U_Charger|FileName=Charger.SchDoc|SheetNumber=3|SymbolType=Normal|RawFileName=Charger.SchDoc|DesignItemId= |SourceLibraryName= |ObjectKind=Sheet Symbol|RevisionGUID= |ItemGUID= |VaultGUID= 
+Record=SheetSymbol|SourceDocument=Master.SchDoc|Designator=U_GLCD|SchDesignator=U_GLCD|FileName=GLCD.SchDoc|SheetNumber=2|SymbolType=Normal|RawFileName=GLCD.SchDoc|DesignItemId= |SourceLibraryName= |ObjectKind=Sheet Symbol|RevisionGUID= |ItemGUID= |VaultGUID= 
+Record=SheetSymbol|SourceDocument=Master.SchDoc|Designator=U_Jack|SchDesignator=U_Jack|FileName=Jack.SchDoc|SheetNumber=8|SymbolType=Normal|RawFileName=Jack.SchDoc|DesignItemId= |SourceLibraryName= |ObjectKind=Sheet Symbol|RevisionGUID= |ItemGUID= |VaultGUID= 

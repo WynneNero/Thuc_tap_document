@@ -62,13 +62,13 @@ typedef enum
 
 
 //#define CURRENT
-//#define VOLTAGE
+#define VOLTAGE
 //#define REMAINING_CAPACITY
 //#define FULL_CHARGE_CAPACITY
-//#define DESIGN_CAPACITY
+#define DESIGN_CAPACITY
 
 #define MANUFACTURER_ACCESS_CONTROL
-//#define WRITE_DATA_FLASH
+#define WRITE_DATA_FLASH
 #define READ_DATA_FLASH
 /* USER CODE END PD */
 
@@ -165,12 +165,6 @@ int main(void)
 	 HAL_Delay(500);
 #endif
 
-#ifdef DESIGN_CAPACITY
-	 HAL_GPIO_TogglePin(LD4_GPIO_Port, LD4_Pin);
-	 Read_BQ34110(&hi2c1, COMMAND_DesignCapacity, rcv_data, 2);
-	 value_DesignCapacity = rcv_data[0] + (rcv_data[1]<<8);
-	 HAL_Delay(500);
-#endif
 
 #ifdef REMAINING_CAPACITY
 	 HAL_GPIO_TogglePin(LD4_GPIO_Port, LD4_Pin);
@@ -194,11 +188,11 @@ int main(void)
 	 	 //write subCommand
 	 Transmit_SubCommand(&hi2c1, COMMAND_ManufacturerAccessControl, SUB_Addr_DesignCapacity);
 	 	 //write data
-	 trans_data[0] = 0x0B;
-	 trans_data[1] = 0xB8;
+	 trans_data[0] = 0x17;
+	 trans_data[1] = 0x70;
 	 Write_Data(&hi2c1, COMMAND_MACData, trans_data, 2);
 	 	 //write checkSum
-	 checkSum = (0xFF - (0x41 + 0xF5 + 0x0B + 0xB8)) & 0xFF;
+	 checkSum = (0xFF - (0x41 + 0xF5 + trans_data[0] + trans_data[1])) & 0xFF;
 	 trans_data[0] = checkSum;
 	 Write_Data(&hi2c1, COMMAND_MACDataSum, trans_data, 1);
 	 	 //write Length
@@ -219,6 +213,14 @@ int main(void)
 
 	 HAL_Delay(500);
 #endif
+
+#ifdef DESIGN_CAPACITY
+	 HAL_GPIO_TogglePin(LD4_GPIO_Port, LD4_Pin);
+	 Read_BQ34110(&hi2c1, COMMAND_DesignCapacity, rcv_data, 2);
+	 value_DesignCapacity = rcv_data[0] + (rcv_data[1]<<8);
+	 HAL_Delay(500);
+#endif
+
 
   }
   /* USER CODE END 3 */
