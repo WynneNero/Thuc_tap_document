@@ -63,13 +63,13 @@ typedef enum
 
 //#define CURRENT
 #define VOLTAGE
-//#define REMAINING_CAPACITY
+#define REMAINING_CAPACITY
 //#define FULL_CHARGE_CAPACITY
 #define DESIGN_CAPACITY
 
 #define MANUFACTURER_ACCESS_CONTROL
-#define WRITE_DATA_FLASH
-#define READ_DATA_FLASH
+//#define WRITE_DATA_FLASH
+//#define READ_DATA_FLASH
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
