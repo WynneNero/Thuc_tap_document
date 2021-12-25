@@ -1,0 +1,20 @@
+Added Component: Designator=IC1(SON40P250X200X80-11N)
+Add component (AddParameter): Name = "Arrow Part Number"; Value = "MAX17055ETB+T"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Arrow Price/Stock"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Datasheet Link"; Value = "https://datasheets.maximintegrated.com/en/ds/MAX17055.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Height"; Value = "0.8mm"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer_Name"; Value = "Maxim Integrated"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer_Part_Number"; Value = "MAX17055ETB+T"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Mouser Part Number"; Value = "700-MAX17055ETB+T"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Mouser Price/Stock"; Value = "https://www.mouser.co.uk/ProductDetail/Maxim-Integrated/MAX17055ETB%2bT?qs=u4fy%2FsgLU9MiRW9MH4Zm9g%3D%3D"; VariantName = "[No Variations]"
+Added Pin To Net: NetName=RT+ Pin=IC1-2
+Added Pin To Net: NetName=SCL Pin=IC1-3
+Added Pin To Net: NetName=SDA Pin=IC1-4
+Added Pin To Net: NetName=NetIC1_5 Pin=IC1-5
+Added Pin To Net: NetName=VBAT- Pin=IC1-6
+Added Pin To Net: NetName=NetC2_2 Pin=IC1-7
+Added Pin To Net: NetName=ALRT Pin=IC1-8
+Added Pin To Net: NetName=NetIC1_9 Pin=IC1-9
+Added Pin To Net: NetName=VBAT+ Pin=IC1-10
+Added Pin To Net: NetName=VBAT- Pin=IC1-11
+Added Member To Class: ClassName=MAX17055 Member=Component IC1 MAX17055ETB+T

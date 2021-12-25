@@ -1,0 +1,20 @@
+----------------------------------------------------------------------------------------------------------------------------------
+NCDrill File Report For: BattManage.PcbDoc   8/6/2021  10:53:50 PM
+----------------------------------------------------------------------------------------------------------------------------------
+
+Layer Pair : Top Layer to Bottom Layer
+ASCII RoundHoles File : BattManage.TXT
+
+Tool       Hole Size               Hole Tolerance               Hole Type       Hole Count   Plated         Tool Travel
+----------------------------------------------------------------------------------------------------------------------------------
+T1      28mil (0.711mm)                                           Round             44        PTH        0.00inch (0.00mm)
+T2      30mil (0.762mm)                                           Round             1         PTH        0.00inch (0.00mm)
+T3      36mil (0.914mm)                                           Round             21        PTH        0.00inch (0.00mm)
+T4      40mil (1.021mm)                                           Round             8         PTH        0.00inch (0.00mm)
+T5      42mil (1.067mm)                                           Round             8         PTH        0.00inch (0.00mm)
+T6      50mil (1.27mm)                                            Round             8         PTH        0.00inch (0.00mm)
+T7      60mil (1.524mm)                                           Round             6         PTH        0.00inch (0.00mm)
+----------------------------------------------------------------------------------------------------------------------------------
+Totals                                                                              96
+
+Total Processing Time (hh:mm:ss) : 00:00:00
