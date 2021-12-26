@@ -37,10 +37,10 @@ typedef enum
 	COMMAND_FullChargeCapacity 			= 0x12,
 	COMMAND_DesignCapacity				= 0x3C,
 	COMMAND_ManufacturerAccessControl	= 0x3E,
-	COMMAND_MACData						= 0x40,		//it returns first MSB value,
+	COMMAND_MACData						= 0x40,
 	COMMAND_MACDataSum					= 0x60,
-	COMMAND_MACDataLen					= 0x61
-
+	COMMAND_MACDataLen					= 0x61,
+	COMMAND_Control						= 0x00
 }Command_typedef;
 
 //SUBCOMMAND
@@ -48,8 +48,16 @@ typedef enum
 {
 	SUB_Addr_DesignCapacity			= 0x41F5,
 	SUB_Addr_FlashUpdateOKVoltage	= 0x4157,
-	SUB_Addr_IntCoeff3				= 0x41C5
-
+	SUB_Addr_IntCoeff3				= 0x41C5,
+	SUB_PIN_CONTROL_EN				= 0x0022,				//can't use read_ManufacturerAccessControl to verify
+	SUB_PIN_LEN_SET					= 0x006E,				//				""
+	SUB_PIN_LEN_RESET				= 0x006F,				//				""
+	SUB_PIN_VEN_SET					= 0x006C,				//				""
+	SUB_PIN_VEN_RESET				= 0x006D,				//				""
+	SUB_GaugingStatus				= 0x0056,				//y
+	SUB_ManufacturingStatus			= 0x0057,				//y
+	SUB_FW_VERSION 					= 0x0002,				//y
+	SUB_SECURITY_KEYS 				= 0x0035				//y
 }Sub_typedef;
 
 
@@ -62,14 +70,19 @@ typedef enum
 
 
 //#define CURRENT
-#define VOLTAGE
-#define REMAINING_CAPACITY
+//#define VOLTAGE
+//#define REMAINING_CAPACITY
 //#define FULL_CHARGE_CAPACITY
-#define DESIGN_CAPACITY
+//#define DESIGN_CAPACITY
 
 #define MANUFACTURER_ACCESS_CONTROL
 //#define WRITE_DATA_FLASH
 //#define READ_DATA_FLASH
+//#define PIN_LEN
+#define PIN_VEN
+//#define FW_VERSION
+
+
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
@@ -154,9 +167,67 @@ int main(void)
 
   while (1)
   {
+
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
+#ifdef PIN_LEN
+	 HAL_GPIO_TogglePin(LD4_GPIO_Port, LD4_Pin);
+
+	 //Read ManufacturingStatus register to get PCTL_EN bit
+	 Transmit_SubCommand(&hi2c1, COMMAND_ManufacturerAccessControl, SUB_ManufacturingStatus);
+	 Read_BQ34110(&hi2c1, COMMAND_MACData, rcv_data, 2);
+
+	 //SET PCTL_EN
+	 uint8_t PCTL_EN = (rcv_data[0] >> 4) & 0x01;
+	 if(PCTL_EN == 0)
+	 {
+		 Transmit_SubCommand(&hi2c1, COMMAND_ManufacturerAccessControl, SUB_PIN_CONTROL_EN);
+	 }
+
+	 //get PCTL_EN after SET to check
+	 Transmit_SubCommand(&hi2c1, COMMAND_ManufacturerAccessControl, SUB_ManufacturingStatus);
+	 Read_BQ34110(&hi2c1, COMMAND_MACData, rcv_data, 2);
+	 PCTL_EN = (rcv_data[0] >> 4) & 0x01;
+
+	 //change PIN_LEN (only when PCTL_EN = 1)
+	 Transmit_SubCommand(&hi2c1, COMMAND_ManufacturerAccessControl, SUB_PIN_LEN_RESET);
+
+	 HAL_Delay(500);
+#endif
+
+#ifdef PIN_VEN
+	 HAL_GPIO_TogglePin(LD4_GPIO_Port, LD4_Pin);
+
+	 //Read ManufacturingStatus register to get PCTL_EN bit
+	 Transmit_SubCommand(&hi2c1, COMMAND_ManufacturerAccessControl, SUB_ManufacturingStatus);
+	 Read_BQ34110(&hi2c1, COMMAND_MACData, rcv_data, 2);
+
+	 //SET PCTL_EN
+	 uint8_t PCTL_EN = (rcv_data[0] >> 4) & 0x01;
+	 if(PCTL_EN == 0)
+	 {
+		 Transmit_SubCommand(&hi2c1, COMMAND_ManufacturerAccessControl, SUB_PIN_CONTROL_EN);
+	 }
+
+	 //get PCTL_EN after SET to check
+	 Transmit_SubCommand(&hi2c1, COMMAND_ManufacturerAccessControl, SUB_ManufacturingStatus);
+	 Read_BQ34110(&hi2c1, COMMAND_MACData, rcv_data, 2);
+	 PCTL_EN = (rcv_data[0] >> 4) & 0x01;
+
+	 //change PIN_VEN (only when PCTL_EN = 1)
+	 Transmit_SubCommand(&hi2c1, COMMAND_ManufacturerAccessControl, SUB_PIN_VEN_RESET);
+
+	 HAL_Delay(500);
+#endif
+
+
+#ifdef FW_VERSION
+	 Transmit_SubCommand(&hi2c1, COMMAND_ManufacturerAccessControl, SUB_FW_VERSION);
+  	 Read_BQ34110(&hi2c1, COMMAND_ManufacturerAccessControl, rcv_data, 2);
+	 Read_BQ34110(&hi2c1, COMMAND_MACData, rcv_data, 4);
+#endif
+
 
 #ifdef VOLTAGE
 	 HAL_GPIO_TogglePin(LD4_GPIO_Port, LD4_Pin);
@@ -179,8 +250,6 @@ int main(void)
 	 value_FullChargeCapacity = rcv_data[0] + (rcv_data[1]<<8);
 	 HAL_Delay(500);
 #endif
-
-
 
 
 #ifdef WRITE_DATA_FLASH
@@ -220,7 +289,6 @@ int main(void)
 	 value_DesignCapacity = rcv_data[0] + (rcv_data[1]<<8);
 	 HAL_Delay(500);
 #endif
-
 
   }
   /* USER CODE END 3 */
@@ -367,12 +435,11 @@ void Transmit_SubCommand(I2C_HandleTypeDef *hi2c,Command_typedef command , Sub_t
 	trans_data[0] = command;
 	trans_data[1] = subCommand & 0x00FF;			//LSB
 	trans_data[2] = subCommand >> 8;				//MSB
-	 if( HAL_I2C_Master_Transmit(hi2c, BQ34110, (uint8_t*)trans_data, 3, HAL_MAX_DELAY) != HAL_OK)
-	 {
-		 Error_Handler();
-	 }
+	if( HAL_I2C_Master_Transmit(hi2c, BQ34110, (uint8_t*)trans_data, 3, HAL_MAX_DELAY) != HAL_OK)
+	{
+	 Error_Handler();
+	}
 }
-
 void Write_Data(I2C_HandleTypeDef *hi2c,Command_typedef command , uint8_t* data, uint8_t size)
 {
 	uint8_t trans_data[33] = {0};
@@ -382,10 +449,10 @@ void Write_Data(I2C_HandleTypeDef *hi2c,Command_typedef command , uint8_t* data,
 		trans_data[i] = data[i - 1];
 	}
 
-	 if( HAL_I2C_Master_Transmit(hi2c, BQ34110, (uint8_t*)trans_data, (uint16_t)(size + 1), HAL_MAX_DELAY) != HAL_OK)
-	 {
-		 Error_Handler();
-	 }
+	if( HAL_I2C_Master_Transmit(hi2c, BQ34110, (uint8_t*)trans_data, (uint16_t)(size + 1), HAL_MAX_DELAY) != HAL_OK)
+	{
+	 Error_Handler();
+	}
 }
 
 
